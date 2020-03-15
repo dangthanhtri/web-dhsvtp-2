@@ -1,0 +1,46 @@
+<html>
+<head>
+  <title>Check-in Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+  <meta charset="utf-8"> 
+</head>
+<body>
+
+  <div id="login_div" class="main-div">
+    <h3>Login</h3>
+    <form>
+      <input type="email" placeholder="Email..." id="email_field" />
+      <input type="password" placeholder="Password..." id="password_field" />
+      <button type="submit" id="login-button">Login to Account</button>
+    </form>
+    <p>Don't have any account?</p>
+    <p><a href="../sign-up/index.html">Registry now!</a></p>
+    <p><a href="../index.html"> <-- Homepage </a></p>
+  </div>
+
+
+    
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDuTjWxGj9I4S-l5SJOdwVaBkbvUlOGQw8",
+    authDomain: "dhsvtp-event.firebaseapp.com",
+    databaseURL: "https://dhsvtp-event.firebaseio.com",
+    projectId: "dhsvtp-event",
+    storageBucket: "dhsvtp-event.appspot.com",
+    messagingSenderId: "269828272951",
+    appId: "1:269828272951:web:a36ec60e00ebfe2ccf20b2"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var db = firebase.firestore();
+</script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="./index.js"></script>
+</body>
+</html>

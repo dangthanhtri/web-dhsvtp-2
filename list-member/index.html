@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Danh sách thành viên</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="./css/mdb.min.css">
+    
+
+    <!-- Custom fonts for this theme -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Theme CSS -->
+  <link href="css/freelancer.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body id="page-top">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">HỘI SINH VIÊN THÀNH PHỐ HỒ CHÍ MINH</a>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <a href="" class="btn btn-primary btn-xl js-scroll-trigger" data-toggle="modal" data-target="#modalContactForm">Thêm thành viên</a>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../">TRANG CHỦ</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../look-up/">TRA CỨU</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a id="log-out" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="">ĐĂNG XUẤT</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="masthead d-flex" id="portfolio">
+    <div class="container text-center my-auto">
+      <h1 id="school-name" class="mb-1"></h1>
+      <h3 class="mb-5">
+        <em>Đại diện các trường sẽ đăng kí cho các thí sinh của trường mình tại đây!</em>
+      </h3>
+      <a href="" class="btn btn-primary btn-xl js-scroll-trigger" data-toggle="modal" data-target="#modalContactForm">Thêm thành viên</a>
+    </div>
+    <div class="overlay"></div>
+  </header>
+
+
+  <!-- Portfolio Section -->
+  <section class="page-section portfolio" >
+    <div class="container">
+
+      <!-- Portfolio Section Heading -->
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Danh sách thành viên</h2>
+
+      <!-- Icon Divider -->
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+      </div>
+
+      <!-- Portfolio Grid Items -->
+      <!-- List -->
+      <div id="list-member">
+        <div id="row" class="row">
+          <!-- Card -->
+            
+          <!-- Card -->
+        </div>
+      </div>
+          <!--Add Form -->
+    <form name="add-mem-form" id="add-form">
+      <div class="modal fade" id="modalContactForm" tabindex="-1"  aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog cascading-modal">
+        <!--Content-->
+        <div class="modal-content">
+          <!--Header-->
+          <div class="modal-header light-blue darken-3 white-text">
+            <h4 class="title"><i class="fas fa-pencil-alt"></i>Thêm thành viên</h4>
+            <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <!--Body-->
+          <div class="modal-body mb-0">
+            <div class="md-form form-sm">
+              <i class="fas fa-user prefix active"></i>
+              <input name="name" type="text" id="name" class="form-control" required>
+              <label for="name" class="active">Họ và tên</label>
+            </div>
+    
+            <div class="md-form form-sm">
+              <i class="fas fa-briefcase prefix"></i>
+              <select name="major" id="major" class="form-control" required>
+                <option value="CDT">Cơ điện tử</option>
+                <option value="DCN">Điện Công nghiệp</option>
+                <option value="DNL">Điện lạnh</option>
+                <option value="DNT">Điện tử</option>
+                <option value="DDG">Điều dưỡng</option>
+                <option value="TDH">Điều khiểu tự động (Tự động hóa)</option>
+                <option value="DOH">Đồ họa</option>
+                <option value="DCS">Dược sĩ</option>
+                <option value="GVM">Giáo viên mầm non</option>
+                <option value="HAN">Hàn</option>
+                <option value="HDV">Hướng dẫn viên du lịch</option>
+                <option value="KTD">Kế toán doanh nghiệp</option>
+                <option value="CNO">Công nghệ ô tô</option>
+                <option value="PVN">Phục vụ nhà hàng</option>
+                <option value="PVP">Phục vụ phòng</option>
+                <option value="TKT">Thiết kế thời trang</option>
+                <option value="TKW">Thiết kế website</option>
+                <option value="TIE">Tiện</option>
+                <option value="CTM">Cắt may</option>
+                <option value="TOX">Thợ xây</option>
+                <option value="ROB">Robot di động</option>
+                <option value="LET">Lễ tân</option>
+                <option value="TKC">Thiết kế kỹ thuật cơ khí</option>
+              </select>
+              <label for="major" class="active">Ngành học</label>
+            </div>
+  
+            <div class="md-form form-sm">
+              <i class="fas fa-envelope prefix"></i>
+              <input name="email" type="email" id="email" class="form-control" required>
+              <label for="email" class="active">Email</label>
+            </div>
+    
+            <div class="md-form form-sm">
+              <i class="fas fa-mobile prefix"></i>
+              <input name="phone" type="number" id="phone" class="form-control" required>
+              <label for="phone" class="active">SĐT</label>
+            </div>
+  
+            <div class="md-form form-sm">
+              <i class="fas fa-graduation-cap prefix"></i>
+              <input name="class" type="text" id="class" class="form-control" required>
+              <label for="class" class="active">Lớp</label>
+            </div>
+  
+            <div class="md-form form-sm">
+              <i class="fas fa-laptop prefix"></i>
+              <input name="faculty" type="text" id="faculty" class="form-control" required>
+              <label for="faculty" class="active">Khoa</label>
+            </div>
+  
+            <div class="md-form form-sm">
+              <i class="fas fa-calendar prefix"></i>
+              <input name="DOB" type="date" id="DOB" class="form-control">
+              <label for="DOB" class="active">Ngày sinh</label>
+            </div>
+    
+            <div class="md-form form-sm">
+              <i>Chọn avatar:</i>
+              <img src="./img/default-user-image.png" style="width: 50px;" />
+                <input name="file-upload" id="file-upload" type="file">
+            </div>
+  
+            <div class="text-center mt-1-half">
+              <button id="add-member-button" class="btn btn-info mb-2 waves-effect waves-light">Hoàn thành<i class="fas fa-send ml-1"></i></button>
+              <i class="wait" style="display: none;">Đang xử lý...</i>
+            </div>
+    
+          </div>
+        </div>
+        <!--/.Content-->
+      </div>
+    </div>
+  </form>
+    <!-- Edit Form -->
+    <form name="edit-mem-form" id="edit-form">
+      <div class="modal fade" id="modalEditForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog cascading-modal" role="document">
+        <!--Content-->
+        <div class="modal-content">
+  
+          <!--Header-->
+          <div class="modal-header light-blue darken-3 white-text">
+            <h4 class="title"><i class="fas fa-pencil-alt"></i> Chỉnh sửa thông tin</h4>
+            <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <!--Body-->
+          <div class="modal-body mb-0">
+            <div class="md-form form-sm">
+              <i class="fas fa-user prefix active"></i>
+              <input name="name" type="text" id="edit-name" placeholder="Họ và tên" class="form-control">
+            </div>
+  
+            <div class="md-form form-sm">
+              <i class="fas fa-briefcase prefix"></i>
+              <input name="major" id="edit-major" class="form-control" disabled>
+            </div>
+  
+            <div class="md-form form-sm">
+              <i class="fas fa-envelope prefix"></i>
+              <input name="email" type="email" id="edit-email" placeholder="Email" class="form-control">
+            </div>
+  
+            <div class="md-form form-sm">
+              <i class="fas fa-mobile prefix"></i>
+              <input name="phone" type="number" id="edit-phone" class="form-control" required>
+            </div>
+  
+            <div class="md-form form-sm">
+              <i class="fas fa-laptop prefix"></i>
+              <input name="class" type="text" id="edit-class" class="form-control" required>
+            </div>
+  
+            <div class="md-form form-sm">
+              <i class="fas fa-graduation-cap prefix"></i>
+              <input name="faculty" type="text" id="edit-faculty" class="form-control" required>
+            </div>
+  
+            <div class="md-form form-sm">
+              <i class="fas fa-calendar prefix"></i>
+              <input name="DOB" type="date" id="edit-DOB" placeholder="Ngày sinh" class="form-control">
+            </div>
+  
+            <input id="edit-id" type="hidden" value="">
+  
+            <div class="md-form form-sm">
+              <img id="avatar" src="./img/default-user-image.png" style="width: 50px;" />
+            </div>
+  
+            <div class="text-center mt-1-half">
+              <button id="edit-member-button" class="btn btn-info mb-2 waves-effect waves-light">Lưu<i class="fas fa-send ml-1"></i></button>
+              <i class="wait" style="display: none;">Đang xử lý...</i>
+            </div>
+  
+          </div>
+        </div>
+        <!--/.Content-->
+      </div>
+      </div>
+    </form>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="page-section bg-primary text-white mb-0" id="about">
+    <div class="container">
+
+      <!-- About Section Heading -->
+      <h2 class="page-section-heading text-center text-uppercase text-white">TRA CỨU</h2>
+
+      <!-- Icon Divider -->
+      <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+      </div>
+
+      <!-- About Section Button -->
+      <div class="text-center mt-4">
+        <a class="btn btn-xl btn-outline-light" href="">
+          <!-- <i class="fas fa-download mr-2"></i> -->
+          Đến Trang Tra Cứu
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="row">
+
+        <!-- Footer Location -->
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">LIÊN HỆ</h4>
+          <p class="lead mb-0">0773077345
+            <br>dangthanhtrispkt@gmail.com</p>
+        </div>
+
+        <!-- Footer Social Icons -->
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">CÁC TRANG LIÊN QUAN</h4>
+          <a class="btn btn-outline-light btn-social mx-1" href="#">
+            <i class="fab fa-fw fa-facebook-f"></i>
+          </a>
+          <a class="btn btn-outline-light btn-social mx-1" href="#">
+            <i class="fab fa-fw fa-twitter"></i>
+          </a>
+          <a class="btn btn-outline-light btn-social mx-1" href="#">
+            <i class="fab fa-fw fa-linkedin-in"></i>
+          </a>
+          <a class="btn btn-outline-light btn-social mx-1" href="#">
+            <i class="fab fa-fw fa-dribbble"></i>
+          </a>
+        </div>
+
+        <!-- Footer About Text -->
+        <div class="col-lg-4">
+          <h4 class="text-uppercase mb-4">HARRISTUDIO</h4>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Copyright Section -->
+  <section class="copyright py-4 text-center text-white">
+    <div class="container">
+      <small>Copyright &copy; HarrisStudio</small>
+    </div>
+  </section>
+
+  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+  <div class="scroll-to-top d-lg-none position-fixed ">
+    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div> 
+
+  
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Contact Form JavaScript -->
+<script src="js/jqBootstrapValidation.js"></script>
+<script src="js/contact_me.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/freelancer.min.js"></script>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="./js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="./js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript"></script>
+
+  <!-- Firebase -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+<script>
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyDuTjWxGj9I4S-l5SJOdwVaBkbvUlOGQw8",
+  authDomain: "dhsvtp-event.firebaseapp.com",
+  databaseURL: "https://dhsvtp-event.firebaseio.com",
+  projectId: "dhsvtp-event",
+  storageBucket: "dhsvtp-event.appspot.com",
+  messagingSenderId: "269828272951",
+  appId: "1:269828272951:web:a36ec60e00ebfe2ccf20b2"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore();
+</script>
+
+
+  <script src="./index.js"></script>
+
+  </body>
+</html>

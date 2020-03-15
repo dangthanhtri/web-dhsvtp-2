@@ -1,0 +1,14 @@
+{
+  "name": "list-member",
+  "version": "1.0.0",
+  "description": "Material Design for Bootstrap\r Version: MDB FREE 4.12.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "khoapham",
+  "license": "ISC",
+  "dependencies": {
+    "cloudinary-core": "^2.8.1"
+  }
+}
