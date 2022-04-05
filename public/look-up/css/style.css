@@ -1,0 +1,232 @@
+i{
+  width: 40px;
+}
+#name-input, #schoolname-input{
+  display: inline;
+  width: 60%;
+  margin-bottom: 5px;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #4285F4 !important; 
+  border-color: #4285F4 !important;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #0069d9 !important;
+  /* border-color: #0062cc; */
+}
+a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-primary:hover {
+  background-color: #4285F4 !important;
+}
+.bg-primary {
+  background-color: #0069d9!important;
+}
+#mainNav .navbar-nav li.nav-item a.nav-link:hover {
+  color: #0069d9;
+}
+input::placeholder{
+  font-style: italic;
+}
+.avatar {
+  border-right: 2px #EAEAEA solid;
+}
+
+.modal-dialog {
+  width: auto;
+  margin: .5rem auto;
+  pointer-events: none;
+}
+@media (min-width: 576px){
+  .modal-dialog {
+      max-width: 1250px;
+      margin: 1.75rem auto;
+  }
+}
+.modal-content{
+  margin: 0 auto;
+  width: 51%;
+  height: auto;
+}
+.modal{
+  padding-right: 0!important;
+
+}
+.container, .card{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+/* .avatar img {
+  height: 220px;
+  width: 180px;
+} */
+/* img {
+  max-width: 100%;
+  border-radius: 1px;
+  vertical-align: middle;
+  border-style: none;
+}
+.container-img{
+  width: 50%;
+  margin: 0 auto;
+} */
+/* #qrcode{
+  position: relative;
+  width: 100%;
+  height: auto;
+  bottom: 0px;
+  right: 0px;
+} */
+@media print{
+  nav, header, footer, section, .modal-content .modal-header{
+      display: none;
+  }
+  #print-content{
+      display: block;
+
+  }
+  
+}
+
+.profile-card{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 10px #00000070;
+  background: url(../thethisinh.jpg);
+  background-size: 100% 100%;
+}
+  
+.box-image{
+  width: 35%; 
+  height: 100%;  
+  padding-bottom: 15%;    
+  margin:auto;
+  text-align:center;
+  margin-top: 50%;
+  }   
+#avatar{
+  width: 100%;
+  height: 100%;  
+  padding-bottom: 130%; 
+  margin-bottom: -38%;
+  background: url(../..//list-member/img/default-user-image.png);
+  background-size: 100% 100% !important;
+  border: 5px solid pink;
+}
+
+.pic{
+  margin: auto;
+  margin-bottom: 20px;
+  border: 2px solid #2c3e50;
+  border-radius: 5px;
+  padding: 1px;
+  position: absolute;
+
+}
+
+.pic:after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 1px solid #2c3e50;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  animation: wave 1.5s infinite linear;
+}
+
+@keyframes wave {
+  to{
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.pic img{
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.name{
+  margin-top: 23px;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+
+.table-responsive{
+  position: absolute;
+  width: 50%;
+  left: 27%;
+  top: 0;
+}
+.bottom-section{
+  position: relative;
+  padding-top:35%;
+}
+
+.qr-section{
+  position: absolute;
+  bottom: 6px;
+  right:6px;
+  width: 20%;
+  height: 15%;
+}
+@media only screen and (min-width: 780px)and (max-width: 860px) {
+
+  .modal-content{
+      margin: 0 auto;
+      width: 80%;
+      height: auto;
+  }
+  .name{
+      margin-top: 3vw;
+      color: black;
+      font-size: 2.3vw;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+}
+@media only screen and (min-width: 860px) and (max-width: 1250px) {
+
+.modal-content{
+  margin: 0 auto;
+  width: 70%;
+  height: auto;
+}
+.name{
+margin-top: 2.5vw;
+color: black;
+font-size: 2vw;
+font-weight: bold;
+letter-spacing: 1px;
+}
+
+
+}
+@media only screen  and (max-width: 780px) {
+
+.modal-content{
+  margin: 0 auto;
+  width: 95%;
+  height: auto;
+}
+.name{
+margin-top: 4vw;
+color: black;
+font-size: 2vw;
+font-weight: bold;
+letter-spacing: 1px;
+}
+
+
+}

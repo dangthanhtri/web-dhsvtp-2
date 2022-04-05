@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <title>HỘI THI TÌM HIỂU CHỦ NGHĨA MÁC - LÊNIN, TƯ TƯỞNG HỒ CHÍ MINH</title>
+
+  <!-- Custom fonts for this theme -->
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Theme CSS -->
+  <link href="../css/freelancer.min.css" rel="stylesheet">
+
+  <!-- jsqrscanner -->
+  <script type="text/javascript" src="./jsPretty/jsqrscanner.nocache.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+      <img src="../Logo_hinh.png" style="width: 300px" />
+      
+      <button id="menu-mobile" class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="" data-toggle="modal" data-target="#modalContactForm">HƯỚNG DẪN</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="" data-toggle="modal" data-target="#modalContactFormExpired">ĐĂNG KÍ</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../look-up/">TRA CỨU</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../nhap-diem/">NHẬP ĐIỂM</a>
+          </li>
+          <li id="log-out" class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#">ĐĂNG XUẤT</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header class="masthead d-flex" id="portfolio">
+    <div id="login_div" class="main-div">
+      <h3>Đăng nhập</h3>
+      <form>
+        <input type="email" placeholder="Email..." id="email_field" />
+        <input type="password" placeholder="Password..." id="password_field" />
+        <button type="submit" id="login-button">Đăng nhập</button>
+      </form>
+    </div>
+    <div id="diem-danh" class="container text-center my-auto">
+      <h1 class="mb-1">Điểm danh</h1>
+      <h3 class="mb-5">
+        <p><em>Quét mã QR để điểm danh thí sinh tại đây</em></p>
+      </h3>
+      <div class="qrscanner" id="scanner">
+      </div>
+      <div class="form-field form-field-memo">
+        <div class="md-form form-sm">
+          <label for="scannedTextMemo" class="active">Mã thí sinh</label>
+          <input name="scannedTextMemo" id="scannedTextMemo" class="form-control">
+        </div>
+        <div class="text-center mt-1-half">
+          <i id="wait" class="wait" style="display: none;">Đang xử lý...</i>
+        </div>
+      </div>
+      
+    </div>
+    
+  </header>
+
+ 
+
+  <!-- About Section -->
+  <section class="ab page-section bg-primary text-white mb-0" id="about">
+    <div class="container">
+
+      <!-- About Section Heading -->
+      <h2 class="page-section-heading text-center text-uppercase text-white">TRA CỨU</h2>
+
+      <!-- Icon Divider -->
+      <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+      </div>
+
+      <!-- About Section Button -->
+      <div class="text-center mt-4">
+        <a class="btn btn-xl btn-outline-light" href="../look-up/">
+          <!-- <i class="fas fa-download mr-2"></i> -->
+          Đến Trang Tra Cứu
+        </a>
+      </div>
+
+    </div>
+  </section>
+  <div class="modal fade" id="modalTTForm" tabindex="-1"  aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog cascading-modal">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header light-blue darken-3 white-text">
+        <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body mb-0">
+          <img id="avatar" src="" alt="">
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+  <div class="modal fade" id="modalContactForm" tabindex="-1"  aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog cascading-modal">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header light-blue darken-3 white-text">
+        <h4 class="title"><i class="fas fa-pencil-alt"></i>Hướng dẫn đăng ký</h4>
+        <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body mb-0">
+          <ul class="tutorial" style="margin-left: -15px">
+            <li>Bước 1: Chọn đơn vị của bạn.</li>
+            <li>Bước 2: Chọn Thêm thành viên để đăng kí thêm thành viên mới.</li>
+            <p><strong>CHÚ Ý:</strong></p>
+            <li>Phần đăng kí chỉ dành cho người đại diện đăng kí cho các đội thi.</li>
+            <li>Vui lòng đăng kí chính xác các trường thông tin. Trường hợp đăng kí sai có thể chọn nút Chỉnh sửa.</li>
+            <li>Nếu sai hình hoặc bổ sung ảnh mới vui lòng chọn dấu X ở góc phải trên của thông tin thí sinh để xóa và thực hiện thêm thành viên lại.</li>
+            <li>Mục bằng cấp có thể chọn nhiều hình ảnh nếu thí sinh có nhiều văn bằng.</li>
+            <li><i>Mục ảnh đại điện nên chọn ảnh có tỉ lệ 3x4 vì ảnh sẽ được dùng để in thẻ thí sinh.</i></li>
+          </ul>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<div class="modal fade" id="modalContactFormExpired" tabindex="-1"  aria-labelledby="myModalLabel"
+aria-hidden="true">
+<div class="modal-dialog cascading-modal">
+  <!--Content-->
+  <div class="modal-content">
+    <!--Header-->
+    <div class="modal-header light-blue darken-3 white-text">
+      <h4 class="title">Đã hết thời hạn đăng ký</h4>
+      <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <!--Body-->
+    <div class="modal-body mb-0">
+        <ul class="tutorial" style="margin-left: -15px">
+          <li>Vui lòng liên hệ: </li>
+          <li>Đ/c Trần Kim Phẳng - Cán bộ ban TNTH Thành Đoàn</li>
+          <p><strong><tel>SĐT: 0352 671 165</strong></p>
+        </ul>
+    </div>
+  </div>
+  <!--/.Content-->
+</div>
+</div>
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="row">
+
+        <!-- Footer Location -->
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">LIÊN HỆ</h4>
+          <p class="lead mb-0">0773077345
+            <br>dangthanhtrispkt@gmail.com</p>
+        </div>
+
+        <!-- Footer Social Icons -->
+        <div class="col-lg-4 mb-5 mb-lg-0">
+        </div>
+
+        <!-- Footer About Text -->
+        <div class="col-lg-4">
+          <h4 class="text-uppercase mb-4">HARRISSTUDIO</h4>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Copyright Section -->
+  <section class="copyright py-4 text-center text-white">
+    <div class="container">
+      <small>Copyright &copy; HarrisStudio</small>
+    </div>
+  </section>
+
+  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+  <div class="scroll-to-top d-lg-none position-fixed ">
+    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Contact Form JavaScript -->
+  <script src="../js/jqBootstrapValidation.js"></script>
+  <script src="../js/contact_me.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="../js/freelancer.min.js"></script>
+  <script>
+  checkCookie();
+  function popup(){
+      $('#modalContactForm').modal({backdrop: 'static', keyboard: false});
+      $('#modalContactForm').modal('show');
+    }
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+  function checkCookie() {
+    var user = getCookie("huongdan");
+    if (user != "") {
+      //alert("Welcome again " + user);
+    } else {
+      //user = prompt("Please enter your name:", "");
+        setCookie("huongdan", "true", 1);
+        popup();
+    }
+  }
+  function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+
+  </script>
+      
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-database.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDuTjWxGj9I4S-l5SJOdwVaBkbvUlOGQw8",
+      authDomain: "dhsvtp-event.firebaseapp.com",
+      databaseURL: "https://dhsvtp-event.firebaseio.com",
+      projectId: "dhsvtp-event",
+      storageBucket: "dhsvtp-event.appspot.com",
+      messagingSenderId: "269828272951",
+      appId: "1:269828272951:web:a36ec60e00ebfe2ccf20b2"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.database();
+    </script>
+    <script src="index.js"></script>
+</body>
+
+</html>
