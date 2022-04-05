@@ -27,7 +27,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
-      <img src="./Logo_hinh.png" style="width: 300px" />
+      <img src="./img/logo.jpg" style="width: 300px" />
       
       <button id="menu-mobile" class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
@@ -35,21 +35,30 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item mx-0 mx-lg-1">
+          <!-- <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="" data-toggle="modal" data-target="#modalContactForm">HƯỚNG DẪN</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
+          </li> -->
+          <!-- <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="./login/">ĐĂNG KÍ</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="./look-up/">TRA CỨU</a>
-          </li>
+          </li> -->
+          <!-- <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="javascript:void(0);" data-toggle="modal" data-target="#modalContactForm">ĐĂNG KÍ</a>
+          </li> -->
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="./diem-danh/">ĐIỂM DANH</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="./nhap-diem/">NHẬP ĐIỂM</a>
           </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="./look-up/">TRA CỨU</a>
+          </li>
+          <!-- <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="./diem-danh/">ĐIỂM DANH</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="./nhap-diem/">NHẬP ĐIỂM</a>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -91,6 +100,9 @@
 					</tbody>
 				</table>
 			</div>
+    <div style="font-size: 2rem;
+    line-height: 2.5rem;
+    color: #2c3e50;">Hiện tại đã có <span id="totalAttendingMem"></span> thí sinh đăng ký/ <span id="totalAttendingUni"></span> trường đăng ký</div>
     </div>
     <div class="overlay"></div>
   </header>
@@ -119,11 +131,17 @@
           <div class="mx-auto" data-toggle="modal" data-target="#portfolioModal1">
             
             <div class="w3-content w3-section">
-              <img class="mySlides" src="one.jpg" style="width:100%">
-              <img class="mySlides" src="two.jpg" style="width:100%">
-              <img class="mySlides" src="three.jpg" style="width:100%">
-              <img class="mySlides" src="four.jpg" style="width:100%">
-              <img class="mySlides" src="five.jpg" style="width:100%">
+              <img class="mySlides" src="./img/1.jpg" style="width:100%">
+              <img class="mySlides" src="./img/2.jpg" style="width:100%">
+              <img class="mySlides" src="./img/3.jpg" style="width:100%">
+              <img class="mySlides" src="./img/4.jpg" style="width:100%">
+              <img class="mySlides" src="./img/5.jpg" style="width:100%">
+              <img class="mySlides" src="./img/6.jpg" style="width:100%">
+              <img class="mySlides" src="./img/7.jpg" style="width:100%">
+              <img class="mySlides" src="./img/8.jpg" style="width:100%">
+              <img class="mySlides" src="./img/9.jpg" style="width:100%">
+              <img class="mySlides" src="./img/10.jpg" style="width:100%">
+
             </div>
           </div>
         </div>
@@ -159,19 +177,19 @@
 
     </div>
   </section>
-  <div class="modal fade" id="modalContactForm" tabindex="-1"  aria-labelledby="myModalLabel"
+  <!-- <div class="modal fade" id="modalContactForm" tabindex="-1"  aria-labelledby="myModalLabel"
     aria-hidden="true">
     <div class="modal-dialog cascading-modal">
-      <!--Content-->
+
       <div class="modal-content">
-        <!--Header-->
+
         <div class="modal-header light-blue darken-3 white-text">
           <h4 class="title"><i class="fas fa-pencil-alt"></i>Hướng dẫn đăng ký</h4>
           <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <!--Body-->
+
         <div class="modal-body mb-0">
             <ul class="tutorial" style="margin-left: -15px">
               <li>Bước 1: Chọn đơn vị của bạn.</li>
@@ -182,6 +200,29 @@
               <li>Nếu sai hình hoặc bổ sung ảnh mới vui lòng chọn dấu X ở góc phải trên của thông tin thí sinh để xóa và thực hiện thêm thành viên lại.</li>
               <li>Mục bằng cấp có thể chọn nhiều hình ảnh nếu thí sinh có nhiều văn bằng.</li>
               <li><i>Mục ảnh đại điện nên chọn ảnh có tỉ lệ 3x4 vì ảnh sẽ được dùng để in thẻ thí sinh.</i></li>
+            </ul>
+        </div>
+      </div>
+
+    </div>
+  </div> -->
+
+  <div class="modal fade" id="modalContactForm" tabindex="-1"  aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog cascading-modal">
+      <!--Content-->
+      <div class="modal-content">
+        <!--Header-->
+        <div class="modal-header light-blue darken-3 white-text">
+          <h4 class="title"><i class="fas fa-pencil-alt"></i>Đã hết thời gian đăng ký!</h4>
+          <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <!--Body-->
+        <div class="modal-body mb-0" style="padding: 2rem 1rem">
+            <ul class="tutorial" style="margin-left: -15px">
+              <li>Đã hết thời gian đăng ký. Vui lòng liên hệ (Đ/c Trần Kim Phẳng - Cán bộ ban TNTH Thành Đoàn) <br /> 0352671165  <br/> bantruonghocthanhdoan@gmail.com</li>
             </ul>
         </div>
       </div>

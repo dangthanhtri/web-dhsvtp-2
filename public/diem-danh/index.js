@@ -13,6 +13,9 @@ logout.addEventListener("click", function(){
     } else {
     }
 });
+
+document.getElementById("submitdiemdanh").addEventListener("click", submitCheckIn)
+
 function submitCheckIn(){
     wait.innerText = "Đang xử lý...";
     wait.style.color = "black";
@@ -61,7 +64,7 @@ function submitCheckIn(){
     }
 }
 const setupUI = (user) => {
-  if (user != null) {
+  if (user != null && user.uid === "O35ixfWZB6NPCnyYfsVen1RO2Sa2") {
         document.getElementById("diem-danh").style.display = "block";
         document.getElementById("login_div").style.display = "none";
         document.getElementById("log-out").style.display = "block";

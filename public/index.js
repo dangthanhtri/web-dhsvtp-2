@@ -40,7 +40,7 @@ db.ref("/users/").on("value", (snapshot)=>{
                             
                         }
                         isSum1B = true;
-                        if(membersDataOfOneSchool[id]["checkin"]){
+                        if(membersDataOfOneSchool[id]["checkin"] && Number(membersDataOfOneSchool[id]["checkin"])){
                             hiendien1B++;
                         }
                     }
@@ -53,7 +53,7 @@ db.ref("/users/").on("value", (snapshot)=>{
                             
                         }
                         isSum2B = true;
-                        if(membersDataOfOneSchool[id]["checkin"]){
+                        if(membersDataOfOneSchool[id]["checkin"] && Number(membersDataOfOneSchool[id]["checkin"])){
                             hiendien2B++;
                         }
                     }
@@ -68,7 +68,7 @@ db.ref("/users/").on("value", (snapshot)=>{
                             
                         }
                         isSum1A = true;
-                        if(membersDataOfOneSchool[id]["checkin"]){
+                        if(membersDataOfOneSchool[id]["checkin"] && Number(membersDataOfOneSchool[id]["checkin"])){
                             hiendien1A++;
                         }
                     }
@@ -80,7 +80,7 @@ db.ref("/users/").on("value", (snapshot)=>{
                             
                         }
                         isSum2A = true;
-                        if(membersDataOfOneSchool[id]["checkin"]){
+                        if(membersDataOfOneSchool[id]["checkin"] && Number(membersDataOfOneSchool[id]["checkin"])){
                             hiendien2A++;
                         }
                     }
@@ -133,7 +133,7 @@ db.ref("/users/").on("value", (snapshot)=>{
                         <td class="team">${gradeListA[i]["schoolname"]}</td>
                         <td class="points">${gradeListA[i]["grade"]}</td>
                         <td class="points">${gradeListA[i]["subGrade"]}</td>
-                        <td class="points">${gradeListA[i]["hiendien"]}/5</td>
+                        <td class="points">${gradeListA[i]["hiendien"]}/6</td>
                     </tr>`
         }else{
             textA += `<tr>
@@ -141,7 +141,7 @@ db.ref("/users/").on("value", (snapshot)=>{
                         <td class="team">${gradeListA[i]["schoolname"]}</td>
                         <td class="points">${gradeListA[i]["grade"]}</td>
                         <td class="points">${gradeListA[i]["subGrade"]}</td>
-                        <td class="points">${gradeListA[i]["hiendien"]}/5</td>
+                        <td class="points">${gradeListA[i]["hiendien"]}/6</td>
                     </tr>`
         }
         
@@ -154,7 +154,7 @@ db.ref("/users/").on("value", (snapshot)=>{
                         <td class="team">${gradeListB[i]["schoolname"]}</td>
                         <td class="points">${gradeListB[i]["grade"]}</td>
                         <td class="points">${gradeListB[i]["subGrade"]}</td>
-                        <td class="points">${gradeListB[i]["hiendien"]}/5</td>
+                        <td class="points">${gradeListB[i]["hiendien"]}/6</td>
                     </tr>`
         }else{
             textB += `<tr>
@@ -162,7 +162,7 @@ db.ref("/users/").on("value", (snapshot)=>{
                         <td class="team">${gradeListB[i]["schoolname"]}</td>
                         <td class="points">${gradeListB[i]["grade"]}</td>
                         <td class="points">${gradeListB[i]["subGrade"]}</td>
-                        <td class="points">${gradeListB[i]["hiendien"]}/5</td>
+                        <td class="points">${gradeListB[i]["hiendien"]}/6</td>
                     </tr>`
         }
         
@@ -170,3 +170,28 @@ db.ref("/users/").on("value", (snapshot)=>{
     document.getElementById("table-bodyA").innerHTML = textA;
     document.getElementById("table-bodyB").innerHTML = textB;
 })
+document.getElementById(
+    "totalAttendingMem"
+  ).innerText = "...";
+  document.getElementById(
+    "totalAttendingUni"
+  ).innerText = "...";
+
+db.ref("users/")
+.on("value", (snapshot) => {
+    let totalAttendingMem = 0;
+    let totalAttendingUni = 0;
+    const docs = snapshot.val();
+    for (let doc in docs) {
+    if(docs[doc]["members"]){
+        totalAttendingMem+= Object.keys(docs[doc]["members"]).length;
+        totalAttendingUni++;
+    }
+    }
+    document.getElementById(
+    "totalAttendingMem"
+    ).innerText = totalAttendingMem;
+    document.getElementById(
+    "totalAttendingUni"
+    ).innerText = totalAttendingUni;
+});

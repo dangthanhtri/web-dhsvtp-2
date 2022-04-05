@@ -67,7 +67,7 @@ updiem.addEventListener("click", function(){
     }
 })
 const setupUI = (user) => {
-  if (user != null) {
+  if (user != null && user.uid === "O35ixfWZB6NPCnyYfsVen1RO2Sa2") {
         document.getElementById("nhap-diem").style.display = "block";
         document.getElementById("login_div").style.display = "none";
         document.getElementById("log-out").style.display = "block";

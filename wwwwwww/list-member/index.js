@@ -1,12 +1,12 @@
 let addMemberButton = document.getElementById('add-member-button');
 let row = document.getElementById("row");
-let loginUrl = "https://anhsangthoidai.harrisstudio.org/login/index.html";
+let loginUrl = "https://tamnhinxuyentheky.harrisstudio.org/login/index.html";
 let logout = document.getElementById('log-out');
 let editMemberButton = document.getElementById('edit-member-button');
 let wait = document.getElementsByClassName("wait");
 let schoolname = '';
 const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/idid/image/upload";
-const CLOUDINARY_UPLOAD_PRESET = 'preset1';
+const CLOUDINARY_UPLOAD_PRESET = 'tamnhinxuyentheky';
 const CLOUDINARY_URL_CERS = "https://api.cloudinary.com/v1_1/dcgqmpr78/image/upload";
 const CLOUDINARY_UPLOAD_PRESET_CERS = 'preset2';
 // ---------------initial webpage----------------------------------------------------

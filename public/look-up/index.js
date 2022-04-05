@@ -1,12 +1,13 @@
 
 async function showInfo(){
-    //let name = document.getElementById("name");
+    let name = document.getElementById("name");
     let schoolnameInput = document.getElementById("schoolname-input");
     let nameInput = document.getElementById("name-input");
-    //let schoolname = document.getElementById("schoolname");
-    //let id = document.getElementById("id");
-    //let typeOfMem = document.getElementById("typeofmem");
-    let avatar = document.getElementById("avatar-img");
+    let schoolname = document.getElementById("schoolname");
+    let id = document.getElementById("id");
+    let shift = document.getElementById("shift");
+    let room = document.getElementById("room");
+    
     let count = false;
     try {
         await db.ref("users/").on('value',(snapshot)=>{
@@ -15,13 +16,13 @@ async function showInfo(){
                 if(snapshot[i].schoolname === schoolnameInput.value){
                     for(let j in snapshot[i].members){
                         if(snapshot[i].members[j].name === nameInput.value){
-                            // name.innerHTML = snapshot[i].members[j].name;
-                            // id.innerHTML = snapshot[i].members[j].id;
-                            // schoolname.innerHTML = snapshot[i].members[j].school;
-                            avatar.src = snapshot[i].members[j].avatar;
-                            //typeOfMem.innerHTML = snapshot[i].members[j].type_of_mem;
+                            name.innerHTML = snapshot[i].members[j].name;
+                            id.innerHTML = snapshot[i].members[j].id;
+                            schoolname.innerHTML = snapshot[i].members[j].school;
+                            room.innerHTML = snapshot[i].members[j].room;
+                            shift.innerHTML = snapshot[i].members[j].shift;
                             count = true;
-                            //document.getElementById("qrcode").src = `https://chart.googleapis.com/chart?cht=qr&chs=250x250&chl=${snapshot[i].members[j].id}`;
+                            document.getElementById("qrcode").src = `https://chart.googleapis.com/chart?cht=qr&chs=250x250&chl=${snapshot[i].members[j].id}`;
                             break;
                         }
                     }

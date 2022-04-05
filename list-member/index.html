@@ -26,20 +26,37 @@
   <link href="css/freelancer.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link rel="stylesheet" href="./css/style.css">
-
+  <style>
+    .bg-secondary{
+      background-color: rgb(221, 105, 144) !important;
+    }
+    .button-reg, #menu-mobile{
+      background-color: rgb(0, 125, 196) !important;
+      border: none !important;
+    }
+    .button-reg, #menu-mobile:hover{
+      background-color: rgb(40, 144, 206) !important;
+    }
+    .ab{
+      background-color: rgb(192, 123, 177) !important;
+    }
+    .greeting{
+      padding-bottom: 0px;
+    }
+  </style>
 </head>
 <body id="page-top">
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">HỘI SINH VIÊN THÀNH PHỐ HỒ CHÍ MINH</a>
-      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="../img/logo.jpg" style="width: 300px" />
+      <button id="menu-mobile" class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <a href="" class="btn btn-primary btn-xl js-scroll-trigger" data-toggle="modal" data-target="#modalContactForm">Thêm thành viên</a>
+          <a id="them-thanh-vien-btn" href="" class="btn btn-primary btn-xl js-scroll-trigger" data-toggle="modal" data-target="#modalContactForm">Thêm thành viên</a>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../">TRANG CHỦ</a>
           </li>
@@ -54,13 +71,12 @@
     </div>
   </nav>
 
-  <header class="masthead d-flex" id="portfolio">
+  <header class="greeting masthead d-flex" id="portfolio">
     <div class="container text-center my-auto">
       <h1 id="school-name" class="mb-1"></h1>
       <h3 class="mb-5">
-        <em>Đại diện các trường sẽ đăng kí cho các thí sinh của trường mình tại đây!</em>
+        <em>Đại diện các trường sẽ đăng kí cho các thí sinh của trường mình tại trang này!</em>
       </h3>
-      <a href="" class="btn btn-primary btn-xl js-scroll-trigger" data-toggle="modal" data-target="#modalContactForm">Thêm thành viên</a>
     </div>
     <div class="overlay"></div>
   </header>
@@ -107,78 +123,55 @@
           </div>
           <!--Body-->
           <div class="modal-body mb-0">
+            <!-- name -->
             <div class="md-form form-sm">
               <i class="fas fa-user prefix active"></i>
               <input name="name" type="text" id="name" class="form-control" required>
               <label for="name" class="active">Họ và tên</label>
             </div>
-    
-            <div class="md-form form-sm">
-              <i class="fas fa-briefcase prefix"></i>
-              <select name="major" id="major" class="form-control" required>
-                <option value="CDT">Cơ điện tử</option>
-                <option value="DCN">Điện Công nghiệp</option>
-                <option value="DNL">Điện lạnh</option>
-                <option value="DNT">Điện tử</option>
-                <option value="DDG">Điều dưỡng</option>
-                <option value="TDH">Điều khiểu tự động (Tự động hóa)</option>
-                <option value="DOH">Đồ họa</option>
-                <option value="DCS">Dược sĩ</option>
-                <option value="GVM">Giáo viên mầm non</option>
-                <option value="HAN">Hàn</option>
-                <option value="HDV">Hướng dẫn viên du lịch</option>
-                <option value="KTD">Kế toán doanh nghiệp</option>
-                <option value="CNO">Công nghệ ô tô</option>
-                <option value="PVN">Phục vụ nhà hàng</option>
-                <option value="PVP">Phục vụ phòng</option>
-                <option value="TKT">Thiết kế thời trang</option>
-                <option value="TKW">Thiết kế website</option>
-                <option value="TIE">Tiện</option>
-                <option value="CTM">Cắt may</option>
-                <option value="TOX">Thợ xây</option>
-                <option value="ROB">Robot di động</option>
-                <option value="LET">Lễ tân</option>
-                <option value="TKC">Thiết kế kỹ thuật cơ khí</option>
-              </select>
-              <label for="major" class="active">Ngành học</label>
-            </div>
-  
-            <div class="md-form form-sm">
-              <i class="fas fa-envelope prefix"></i>
-              <input name="email" type="email" id="email" class="form-control" required>
-              <label for="email" class="active">Email</label>
-            </div>
-    
-            <div class="md-form form-sm">
-              <i class="fas fa-mobile prefix"></i>
-              <input name="phone" type="number" id="phone" class="form-control" required>
-              <label for="phone" class="active">SĐT</label>
-            </div>
-  
-            <div class="md-form form-sm">
-              <i class="fas fa-graduation-cap prefix"></i>
-              <input name="class" type="text" id="class" class="form-control" required>
-              <label for="class" class="active">Lớp</label>
-            </div>
-  
-            <div class="md-form form-sm">
-              <i class="fas fa-laptop prefix"></i>
-              <input name="faculty" type="text" id="faculty" class="form-control" required>
-              <label for="faculty" class="active">Khoa</label>
-            </div>
-  
+            
+            <!-- DOB -->
             <div class="md-form form-sm">
               <i class="fas fa-calendar prefix"></i>
-              <input name="DOB" type="date" id="DOB" class="form-control">
-              <label for="DOB" class="active">Ngày sinh</label>
+              <input name="DOB" type="number" id="DOB" class="form-control">
+              <label for="DOB" class="active">Năm sinh</label>
             </div>
-    
+            <!-- type of member -->
+            <div class="md-form form-sm">
+              <select name="typeofmem" id="typeofmem" class="form-control" required>
+                <option value="Dự bị" selected>Dự bị</option>
+                <option value="Chính thức">Chính thức</option>
+              </select>
+              <label  for="typeofmem" class="active">Loại thí sinh</label>
+            </div>
+            <!-- group -->
+            <div class="md-form form-sm">
+              <select name="typeofgroup" id="typeofgroup" class="form-control" required>
+                <option value="doi1" selected>Đội 1</option>
+                <option value="doi2">Đội 2</option>
+              </select>
+              <label  for="typeofgroup" class="active">Loại thí sinh</label>
+            </div>
+            <!-- faculty -->
+            <div class="md-form form-sm">
+              <i class="fas fa-calendar prefix"></i>
+              <input name="faculty" type="text" id="faculty" class="form-control">
+              <label for="faculty" class="active">Khoa/Bộ môn</label>
+            </div>
+            
+            <!-- certification -->
+            <div class="md-form form-sm">
+              <i>Upload bằng cấp:</i>
+              <img src="./img/default-user-image.png" style="width: 50px;" />
+                <input name="cers-upload" id="cers-upload" type="file" multiple="multiple">
+            </div>
+
+            <!-- avatar -->
             <div class="md-form form-sm">
               <i>Chọn avatar:</i>
               <img src="./img/default-user-image.png" style="width: 50px;" />
                 <input name="file-upload" id="file-upload" type="file">
             </div>
-  
             <div class="text-center mt-1-half">
               <button id="add-member-button" class="btn btn-info mb-2 waves-effect waves-light">Hoàn thành<i class="fas fa-send ml-1"></i></button>
               <i class="wait" style="display: none;">Đang xử lý...</i>
@@ -207,43 +200,48 @@
           </div>
           <!--Body-->
           <div class="modal-body mb-0">
+            <!-- name -->
             <div class="md-form form-sm">
               <i class="fas fa-user prefix active"></i>
               <input name="name" type="text" id="edit-name" placeholder="Họ và tên" class="form-control">
             </div>
-  
-            <div class="md-form form-sm">
-              <i class="fas fa-briefcase prefix"></i>
-              <input name="major" id="edit-major" class="form-control" disabled>
-            </div>
-  
-            <div class="md-form form-sm">
-              <i class="fas fa-envelope prefix"></i>
-              <input name="email" type="email" id="edit-email" placeholder="Email" class="form-control">
-            </div>
-  
-            <div class="md-form form-sm">
-              <i class="fas fa-mobile prefix"></i>
-              <input name="phone" type="number" id="edit-phone" class="form-control" required>
-            </div>
-  
-            <div class="md-form form-sm">
-              <i class="fas fa-laptop prefix"></i>
-              <input name="class" type="text" id="edit-class" class="form-control" required>
-            </div>
-  
-            <div class="md-form form-sm">
-              <i class="fas fa-graduation-cap prefix"></i>
-              <input name="faculty" type="text" id="edit-faculty" class="form-control" required>
-            </div>
-  
+            <!-- dob -->
             <div class="md-form form-sm">
               <i class="fas fa-calendar prefix"></i>
-              <input name="DOB" type="date" id="edit-DOB" placeholder="Ngày sinh" class="form-control">
+              <input name="DOB" type="number" id="edit-DOB" placeholder="Năm sinh" class="form-control">
             </div>
-  
+            <!-- type of mem -->
+            <div class="md-form form-sm">
+              <select name="edit-typeofmem" id="edit-typeofmem" class="form-control" required>
+                <option value="Dự bị" selected>Dự bị</option>
+                <option value="Chính thức">Chính thức</option>
+              </select>
+              <label  for="edit-typeofmem" class="active">Loại thí sinh</label>
+            </div>
+            <!--edit group -->
+            <div class="md-form form-sm">
+              <select name="typeofgroup" id="edit-typeofgroup" class="form-control" required>
+                <option value="doi1" selected>Đội 1</option>
+                <option value="doi2">Đội 2</option>
+              </select>
+              <label  for="edit-typeofgroup" class="active">Tên đội</label>
+            </div>
+            <!--edit faculty -->
+            <div class="md-form form-sm">
+              <i class="fas fa-calendar prefix"></i>
+              <input name="faculty" type="text" id="edit-faculty" class="form-control">
+              
+            </div>
+            
+            <!--edit certification -->
+            <i>Bằng cấp:</i>
+            <div id="edit-cers" class="md-form form-sm">
+              
+              
+            </div>
+
             <input id="edit-id" type="hidden" value="">
-  
+            <!-- avatar -->
             <div class="md-form form-sm">
               <img id="avatar" src="./img/default-user-image.png" style="width: 50px;" />
             </div>
@@ -261,9 +259,150 @@
     </form>
     </div>
   </section>
+  <form name="add-school-name" id="add-school-name-form">
+    <div class="modal fade" id="modalEditSchoolNameForm" tabindex="-1"  aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog cascading-modal">
+      <!--Content-->
+      <div class="modal-content">
+        <!--Header-->
+        <div class="modal-header light-blue darken-3 white-text">
+          <h4 class="title"><i class="fas fa-pencil-alt"></i>Bạn cần chọn tên đơn vị của mình trước</h4>
+          
+        </div>
+        <!--Body-->
+        <div class="modal-body mb-0">
+  
+          <div class="md-form form-sm">
+            <select class="form-control js-scroll-trigger" name="schoolname" id="schoolname" required>
+              <option value="Đoàn Trường CĐ Bách Việt">Đoàn Trường CĐ Bách Việt</option>
+              <option value="Đoàn Trường CĐ Phát thanh truyền hình 2">Đoàn Trường CĐ Phát thanh truyền hình 2</option>
+              <option value="Đoàn Trường CĐ Công nghệ thông tin ">Đoàn Trường CĐ Công nghệ thông tin </option>
+              <option value="Đoàn Trường CĐ Công nghệ Thủ Đức">Đoàn Trường CĐ Công nghệ Thủ Đức</option>
+              <option value="Đoàn Trường CĐ Công thương TP.HCM">Đoàn Trường CĐ Công thương TP.HCM</option>
+              <option value="Đoàn Trường CĐ Điện lực TP. HCM">Đoàn Trường CĐ Điện lực TP. HCM</option>
+              <option value="Đoàn Trường CĐ Giao thông vận tải TW 6">Đoàn Trường CĐ Giao thông vận tải TW 6</option>
+              <option value="Đoàn Trường CĐ Giao Thông vận tải TP. HCM">Đoàn Trường CĐ Giao Thông vận tải TP. HCM</option>
+              <option value="Đoàn Trường CĐ Kinh tế - Công nghệ TP. HCM">Đoàn Trường CĐ Kinh tế - Công nghệ TP. HCM</option>
+              <option value="Đoàn Trường CĐ Kinh tế đối ngoại">Đoàn Trường CĐ Kinh tế đối ngoại</option>
+              <option value="Đoàn Trường CĐ Kinh tế TP.HCM">Đoàn Trường CĐ Kinh tế TP.HCM</option>
+              <option value="Đoàn Trường CĐ Kỹ thuật Cao Thắng">Đoàn Trường CĐ Kỹ thuật Cao Thắng</option>
+              <option value="Đoàn Trường CĐ Kỹ thuật Lý Tự Trọng">Đoàn Trường CĐ Kỹ thuật Lý Tự Trọng</option>
+              <option value="Đoàn Trường CĐ Kinh tế - Kỹ thuật TP.HCM">Đoàn Trường CĐ Kinh tế - Kỹ thuật TP.HCM</option>
+              <option value="Đoàn Trường CĐ Miền Nam">Đoàn Trường CĐ Miền Nam</option>
+              <option value="Đoàn Trường CĐ Nghề TP.HCM">Đoàn Trường CĐ Nghề TP.HCM</option>
+              <option value="Đoàn Trường CĐ Nghề Kỹ thuật - Công nghệ TP.HCM">Đoàn Trường CĐ Nghề Kỹ thuật - Công nghệ TP.HCM</option>
+              <option value="Đoàn Trường CĐ Nghề Nguyễn Trường Tộ">Đoàn Trường CĐ Nghề Nguyễn Trường Tộ</option>
+              <option value="Đoàn Trường CĐ Quốc tế TP.HCM">Đoàn Trường CĐ Quốc tế TP.HCM</option>
+              <option value="Đoàn Trường CĐ Sư phạm Trung ương TP. HCM">Đoàn Trường CĐ Sư phạm Trung ương TP. HCM</option>
+              <option value="Đoàn Trường CĐ Tài chính - Hải quan">Đoàn Trường CĐ Tài chính - Hải quan</option>
+              <option value="Đoàn Trường CĐ Văn hóa - Nghệ thuật TP. HCM">Đoàn Trường CĐ Văn hóa - Nghệ thuật TP. HCM</option>
+              <option value="Đoàn Trường CĐ Viễn Đông">Đoàn Trường CĐ Viễn Đông</option>
+              <option value="Đoàn Trường CĐ Xây dựng TP.HCM">Đoàn Trường CĐ Xây dựng TP.HCM</option>
+              <option value="Đoàn Trường ĐH Bách khoa - Đoàn Trường ĐHQG-HCM">Đoàn Trường ĐH Bách khoa - Đoàn Trường ĐHQG-HCM</option>
+              <option value="Đoàn Trường ĐH Công nghệ Sài Gòn">Đoàn Trường ĐH Công nghệ Sài Gòn</option>
+              <option value="Đoàn Trường ĐH Công nghệ Thông tin TP. HCM">Đoàn Trường ĐH Công nghệ Thông tin TP. HCM</option>
+              <option value="Đoàn Trường ĐH Công nghiệp TP.HCM">Đoàn Trường ĐH Công nghiệp TP.HCM</option>
+              <option value="Đoàn Trường ĐH Công nghiệp Thực phẩm TP. HCM">Đoàn Trường ĐH Công nghiệp Thực phẩm TP. HCM</option>
+              <option value="Đoàn Trường ĐH Giao thông vận tải Phân hiệu TP.HCM">Đoàn Trường ĐH Giao thông vận tải Phân hiệu TP.HCM</option>
+              <option value="Đoàn Trường ĐH Giao thông vận tải TP. HCM">Đoàn Trường ĐH Giao thông vận tải TP. HCM</option>
+              <option value="Đoàn Trường ĐH Hoa Sen">Đoàn Trường ĐH Hoa Sen</option>
+              <option value="Đoàn Trường ĐH Hùng Vương TP.HCM">Đoàn Trường ĐH Hùng Vương TP.HCM</option>
+              <option value="Đoàn Trường ĐH Khoa học Tự Nhiên">Đoàn Trường ĐH Khoa học Tự Nhiên</option>
+              <option value="Đoàn Trường ĐH Khoa học xã hội & Nhân văn">Đoàn Trường ĐH Khoa học xã hội & Nhân văn</option>
+              <option value="Đoàn Trường ĐH Kiến trúc TP.HCM">Đoàn Trường ĐH Kiến trúc TP.HCM</option>
+              <option value="Đoàn Trường ĐH Kinh Tế - Luật">Đoàn Trường ĐH Kinh Tế - Luật</option>
+              <option value="Đoàn Trường ĐH Kinh tế TP.HCM">Đoàn Trường ĐH Kinh tế TP.HCM</option>
+              <option value="Đoàn Trường ĐH Kinh tế - Tài chính">Đoàn Trường ĐH Kinh tế - Tài chính</option>
+              <option value="Đoàn Trường ĐH Công nghệ TP.HCM">Đoàn Trường ĐH Công nghệ TP.HCM</option>
+              <option value="Đoàn Trường ĐH Lao động Xã hội CS2">Đoàn Trường ĐH Lao động Xã hội CS2</option>
+              <option value="Đoàn Trường ĐH Luật TP.HCM">Đoàn Trường ĐH Luật TP.HCM</option>
+              <option value="Đoàn Trường ĐH Mở TP.HCM">Đoàn Trường ĐH Mở TP.HCM</option>
+              <option value="Đoàn Trường ĐH Mỹ thuật TP.HCM">Đoàn Trường ĐH Mỹ thuật TP.HCM</option>
+              <option value="Đoàn Trường ĐH Ngân hàng TP. HCM">Đoàn Trường ĐH Ngân hàng TP. HCM</option>
+              <option value="Đoàn Trường ĐH Ngoại ngữ - Tin học  TP.HCM">Đoàn Trường ĐH Ngoại ngữ - Tin học  TP.HCM</option>
+              <option value="Đoàn Trường ĐH Ngoại thương CS2">Đoàn Trường ĐH Ngoại thương CS2</option>
+              <option value="Đoàn Trường ĐH Nguyễn Tất Thành">Đoàn Trường ĐH Nguyễn Tất Thành</option>
+              <option value="Đoàn Trường ĐH Nông Lâm TP. HCM">Đoàn Trường ĐH Nông Lâm TP. HCM</option>
+              <option value="Đoàn Trường ĐH Quốc tế">Đoàn Trường ĐH Quốc tế</option>
+              <option value="Đoàn Trường ĐH Quốc tế Hồng Bàng">Đoàn Trường ĐH Quốc tế Hồng Bàng</option>
+              <option value="Đoàn Trường ĐH Sài Gòn">Đoàn Trường ĐH Sài Gòn</option>
+              <option value="Đoàn Trường ĐH Sân khấu - Điện ảnh TP.HCM">Đoàn Trường ĐH Sân khấu - Điện ảnh TP.HCM</option>
+              <option value="Đoàn Trường ĐH Sư phạm kỹ thuật TP.HCM">Đoàn Trường ĐH Sư phạm kỹ thuật TP.HCM</option>
+              <option value="Đoàn Trường ĐH Sư Phạm Thể dục thể thao TP.HCM">Đoàn Trường ĐH Sư Phạm Thể dục thể thao TP.HCM</option>
+              <option value="Đoàn Trường ĐH Sư phạm TP.HCM">Đoàn Trường ĐH Sư phạm TP.HCM</option>
+              <option value="Đoàn Trường ĐH Tài chính - Marketing">Đoàn Trường ĐH Tài chính - Marketing</option>
+              <option value="Đoàn Trường ĐH Tài nguyên Môi trường TP.HCM">Đoàn Trường ĐH Tài nguyên Môi trường TP.HCM</option>
+              <option value="Đoàn Trường ĐH Thể dục thể thao TP. HCM">Đoàn Trường ĐH Thể dục thể thao TP. HCM</option>
+              <option value="Đoàn Trường ĐH Tôn Đức Thắng">Đoàn Trường ĐH Tôn Đức Thắng</option>
+              <option value="Đoàn Trường ĐH Văn Hiến">Đoàn Trường ĐH Văn Hiến</option>
+              <option value="Đoàn Trường ĐH Văn hóa TP.HCM">Đoàn Trường ĐH Văn hóa TP.HCM</option>
+              <option value="Đoàn Trường ĐH Văn Lang">Đoàn Trường ĐH Văn Lang</option>
+              <option value="Đoàn Trường ĐH Y dược TP.HCM">Đoàn Trường ĐH Y dược TP.HCM</option>
+              <option value="Đoàn Trường ĐH Y Khoa Phạm Ngọc Thạch">Đoàn Trường ĐH Y Khoa Phạm Ngọc Thạch</option>
+              <option value="Đoàn Học viện Hàng không Việt Nam">Đoàn Học viện Hàng không Việt Nam</option>
+              <option value="Đoàn Học viện Hành chính CS TP. HCM">Đoàn Học viện Hành chính CS TP. HCM</option>
+              <option value="Đoàn Học viên cán bộ TP.HCM">Đoàn Học viên cán bộ TP.HCM</option>
+              <option value="Đoàn Trường TC KT-KT Nguyễn Hữu Cảnh">Đoàn Trường TC KT-KT Nguyễn Hữu Cảnh</option>
+              <option value="Đoàn Trường TC Du lịch và Khách sạn Sài Gòn Tourist">Đoàn Trường TC Du lịch và Khách sạn Sài Gòn Tourist</option>
+              <option value="Đoàn Trường TC Kỹ thuật Nông nghiệp TP.HCM">Đoàn Trường TC Kỹ thuật Nông nghiệp TP.HCM</option>
+              <option value="Đoàn Trường TC Thông tin truyền thông TP.HCM">Đoàn Trường TC Thông tin truyền thông TP.HCM</option>
+              <option value="Đoàn Trường TC Kỹ thuật nghiệp vụ Tôn Đức Thắng">Đoàn Trường TC Kỹ thuật nghiệp vụ Tôn Đức Thắng</option>
+              <option value="Đoàn Trường TC Xây dựng TP.HCM">Đoàn Trường TC Xây dựng TP.HCM</option>
+              <option value="Đoàn Trường Dự bị Đại học">Đoàn Trường Dự bị Đại học</option>
+              <option value="Đoàn trường Trung học Thực hành Sài Gòn (Đại học Sài Gòn)">Đoàn trường Trung học Thực hành Sài Gòn (Đại học Sài Gòn)</option>
+          <option value="Đoàn trường Phổ thông Năng khiếu (Đại học Khoa học Tự nhiên - ĐHQG TP.HCM)">Đoàn trường Phổ thông Năng khiếu (Đại học Khoa học Tự nhiên - ĐHQG TP.HCM)</option>
+          <option value="Đoàn trường Trung học thực hành (Đại học Sư phạm TP.HCM)">Đoàn trường Trung học thực hành (Đại học Sư phạm TP.HCM)</option>
+              <option value="Khac">Khác...</option>
+            </select>
 
+          </div>
+
+          <div class="text-center mt-1-half">
+            <button id="add-school-name" class="btn btn-info mb-2 waves-effect waves-light">Hoàn thành<i class="fas fa-send ml-1"></i></button>
+            <i class="wait" style="display: none;">Đang xử lý...</i>
+          </div>
+  
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+</form>
+<form name="add-another-school-name" id="add-another-school-name-form">
+  <div class="modal fade" id="modalAnotherSchoolNameForm" tabindex="-1"  aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog cascading-modal">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header light-blue darken-3 white-text">
+        <h4 class="title"><i class="fas fa-pencil-alt"></i>Bạn cần chọn tên đơn vị của mình trước</h4>
+        <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body mb-0">
+
+        <div class="md-form form-sm">
+          <input class="form-control" name="another-schoolname" id="another-schoolname" placeholder="Nhập tên đơn vị tại đây..." required/>
+          <label for="another-schoolname" class="active">Tên đơn vị</label>
+        </div>
+
+        <div class="text-center mt-1-half">
+          <button id="add-another-school-name" class="btn btn-info mb-2 waves-effect waves-light">Hoàn thành<i class="fas fa-send ml-1"></i></button>
+          <i class="wait" style="display: none;">Đang xử lý...</i>
+        </div>
+
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+</form>
   <!-- About Section -->
-  <section class="page-section bg-primary text-white mb-0" id="about">
+  <section class="ab page-section bg-primary text-white mb-0" id="about">
     <div class="container">
 
       <!-- About Section Heading -->
@@ -304,19 +443,7 @@
 
         <!-- Footer Social Icons -->
         <div class="col-lg-4 mb-5 mb-lg-0">
-          <h4 class="text-uppercase mb-4">CÁC TRANG LIÊN QUAN</h4>
-          <a class="btn btn-outline-light btn-social mx-1" href="#">
-            <i class="fab fa-fw fa-facebook-f"></i>
-          </a>
-          <a class="btn btn-outline-light btn-social mx-1" href="#">
-            <i class="fab fa-fw fa-twitter"></i>
-          </a>
-          <a class="btn btn-outline-light btn-social mx-1" href="#">
-            <i class="fab fa-fw fa-linkedin-in"></i>
-          </a>
-          <a class="btn btn-outline-light btn-social mx-1" href="#">
-            <i class="fab fa-fw fa-dribbble"></i>
-          </a>
+          
         </div>
 
         <!-- Footer About Text -->
@@ -372,7 +499,7 @@
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-database.js"></script>
 <script>
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -386,7 +513,7 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-var db = firebase.firestore();
+var db = firebase.database();
 </script>
 
 

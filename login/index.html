@@ -7,16 +7,13 @@
 </head>
 <body>
 
-  <div id="login_div" class="main-div">
-    <h3>Login</h3>
+  <div style="text-align: center;" id="login_div" class="main-div">
+    <h3>LOGIN</h3>
     <form>
-      <input type="email" placeholder="Email..." id="email_field" />
-      <input type="password" placeholder="Password..." id="password_field" />
-      <button type="submit" id="login-button">Login to Account</button>
+      <button type="button" id="login-button">Login with Google Account</button>
     </form>
-    <p>Don't have any account?</p>
-    <p><a href="../sign-up/index.html">Registry now!</a></p>
-    <p><a href="../index.html"> <-- Homepage </a></p>
+    <a style="color: aliceblue;" href="../index.html"><button type="button"> Homepage </button></a>
+
   </div>
 
 
@@ -24,7 +21,7 @@
 <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-database.js"></script>
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
@@ -38,7 +35,8 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  var db = firebase.firestore();
+  var db = firebase.database();
+  const googleProvider = new firebase.auth.GoogleAuthProvider();
 </script>
   <!-- Compiled and minified JavaScript -->
   <script src="./index.js"></script>

@@ -92,7 +92,7 @@ function getNewToken(oAuth2Client, callback) {
 function listMajors(auth) {
   const sheets = google.sheets({version: 'v4', auth});
   sheets.spreadsheets.values.get({
-    spreadsheetId: '1eLfPFQgSmjNdW9z2LzLYaTcWI9uCVdREZtoO3FulmbQ',
+    spreadsheetId: '16zu5ldBn21G792PrrYy6Lx4yCsRyBD6mYsaByNl9sOg',
     range: 'sheet2',
   }, (err, res) => {
     if (err) return console.log('The API returned an error: ' + err);
@@ -102,12 +102,13 @@ function listMajors(auth) {
       rows.map((row) => {
         uploadDataToDatabase(row);
       });
-    //console.log(rows);
+    console.log("DONE");
     } else {
       console.log('No data found.');
     }
   });
 }
+
 async function uploadDataToDatabase(row){
     // await db.ref('/users/').once('value').then(async function(snapshot){
     //   let allSchools = snapshot.val();
@@ -115,21 +116,30 @@ async function uploadDataToDatabase(row){
     //     await db.ref('/users/' + idSchool + '/members/').remove();
     //   }
     // })
-    // await db.ref('/users/').once('value').then(async function(snapshot){
-    //   let allSchools = snapshot.val();
+    if(row[0] == "STT") return;
+    await db.ref('/users/').once('value').then(async function(snapshot){
+    //let allSchools = snapshot.val();
     //   for(let idSchool in allSchools){
-    //     if(allSchools[idSchool]["schoolname"] == row[7]){
-    //       let updates = {};
-    //       updates['/users/' + idSchool + '/members/' + row[1] + "/id"] = row[1]; 
-    //       updates['/users/' + idSchool + '/members/' + row[1] + "/type_of_group"] = row[2]; 
-    //       updates['/users/' + idSchool + '/members/' + row[1] + "/name"] = row[3]; 
-    //       updates['/users/' + idSchool + '/members/' + row[1] + "/type_of_mem"] = row[4]; 
-    //       updates['/users/' + idSchool + '/members/' + row[1] + "/shift"] = row[5]; 
-    //       updates['/users/' + idSchool + '/members/' + row[1] + "/room"] = row[6];
-    //       updates['/users/' + idSchool + '/members/' + row[1] + "/school"] = row[7];
-    //       updates['/users/' + idSchool + '/members/' + row[1] + "/avatar"] = row[8];  
-    //       await db.ref().update(updates);
-    //       break;
+    //     if(row[1] == ''){
+    //       row[1] = GenerateRandomId();
+    //     }
+    //     if(row[4] == allSchools[idSchool]["schoolname"]){
+    //         let updates = {};
+    //         updates['/users/' + idSchool + '/members/' + row[1] + "/id"] = row[1]; 
+    //         updates['/users/' + idSchool + '/members/' + row[1] + "/name"] = row[2]; 
+    //         updates['/users/' + idSchool + '/members/' + row[1] + "/faculty"] = row[3];
+    //         updates['/users/' + idSchool + '/members/' + row[1] + "/school"] = row[4]; 
+    //         updates['/users/' + idSchool + '/members/' + row[1] + "/board"] = row[5];
+    //         updates['/users/' + idSchool + '/members/' + row[1] + "/msts"] = row[6];
+    //         updates['/users/' + idSchool + '/members/' + row[1] + "/shift"] = row[7]; 
+    //         updates['/users/' + idSchool + '/members/' + row[1] + "/room"] = row[8];
+    //         updates['/users/' + idSchool + '/members/' + row[1] + "/type_of_group"] = row[9]; 
+    //         updates['/users/' + idSchool + '/members/' + row[1] + "/type_of_mem"] = row[10];
+    //         updates['/users/' + idSchool + '/members/' + row[1] + "/checkin"] = row[11];
+    //         updates['/users/' + idSchool + '/members/' + row[1] + "/avatar"] = row[12]; 
+    //         updates['/users/' + idSchool + '/members/' + row[1] + "/certificates"] = row[13]; 
+    //         await db.ref().update(updates);
+    //         break;
     //     }
     //   }
     // })
@@ -142,16 +152,29 @@ async function uploadDataToDatabase(row){
     //   }
     // })
     let updates = {};
-    updates['/users/' + row[0] + '/id'] = row[0]; 
-    updates['/users/' + row[0] + '/permission'] = "user"; 
-    updates['/users/' + row[0] + '/schoolname'] = row[7]; 
-    updates['/users/' + row[0] + '/members/' + row[1] + "/id"] = row[1]; 
-    updates['/users/' + row[0] + '/members/' + row[1] + "/type_of_group"] = row[2]; 
-    updates['/users/' + row[0] + '/members/' + row[1] + "/name"] = row[3]; 
-    updates['/users/' + row[0] + '/members/' + row[1] + "/type_of_mem"] = row[4]; 
-    updates['/users/' + row[0] + '/members/' + row[1] + "/shift"] = row[5]; 
-    updates['/users/' + row[0] + '/members/' + row[1] + "/room"] = row[6];
-    updates['/users/' + row[0] + '/members/' + row[1] + "/school"] = row[7];
-    updates['/users/' + row[0] + '/members/' + row[1] + "/avatar"] = row[8];  
+    let schoolname = row[4].toLowerCase().split(" ").join('').replace(/[^a-zA-Z ]/g, "").replace(/[àáảãạâầấẩẫậăằắẳẵặ]/g, 'a')
+    .replace(/[èéẻẽẹêềếểễệ]/g, 'e')
+    .replace(/[đ]/g, 'd')
+    .replace(/[ìíỉĩị]/g, 'i')
+    .replace(/[òóỏõọôồốổỗộơờớởỡợ]/g, 'o')
+    .replace(/[ùúủũụưừứửữự]/g, 'u')
+    .replace(/[ỳýỷỹỵ]/g, 'y');
+    updates['/users/' + schoolname + '/id'] = schoolname;
+    updates['/users/' + schoolname + '/permission'] = "user"; 
+    updates['/users/' + schoolname + '/schoolname'] = row[4]; 
+    updates['/users/' + schoolname + '/members/' + row[6] + "/id"] = row[6]; 
+    updates['/users/' + schoolname + '/members/' + row[6] + "/name"] = row[2]; 
+    updates['/users/' + schoolname + '/members/' + row[6] + "/faculty"] = row[3];
+    updates['/users/' + schoolname + '/members/' + row[6] + "/school"] = row[4]; 
+    updates['/users/' + schoolname + '/members/' + row[6] + "/board"] = row[5];
+    updates['/users/' + schoolname + '/members/' + row[6] + "/msts"] = row[6];
+    updates['/users/' + schoolname + '/members/' + row[6] + "/shift"] = row[7]; 
+    updates['/users/' + schoolname + '/members/' + row[6] + "/room"] = row[8];
+    updates['/users/' + schoolname + '/members/' + row[6] + "/type_of_group"] = row[9]; 
+    updates['/users/' + schoolname + '/members/' + row[6] + "/type_of_mem"] = row[10];
+    updates['/users/' + schoolname + '/members/' + row[6] + "/checkin"] = row[11];
+    updates['/users/' + schoolname + '/members/' + row[6] + "/avatar"] = row[12]; 
+    updates['/users/' + schoolname + '/members/' + row[6] + "/certificates"] = row[13] || " "; 
         await db.ref().update(updates);
+  })
 }
