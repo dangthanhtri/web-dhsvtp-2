@@ -1,4 +1,4 @@
-const listMemberUrl = "https://tamnhinxuyentheky.harrisstudio.org/list-member/";
+const listMemberUrl = "https://anhsangthoidai.harrisstudio.org/list-member/";
 let loginButton = document.getElementById("login-button");
 firebase.auth().onAuthStateChanged(function(user) {
     setupUI(user);
