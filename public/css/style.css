@@ -69,3 +69,23 @@ tbody tr:hover {
 td.rank {
 	text-transform: capitalize;
 }
+
+.banner {
+  width: 100%;
+}
+
+.masthead {
+  padding-top: calc(6rem + 48px);
+}
+
+@media (min-width: 992px) {
+  .masthead {
+    padding-top: calc(6rem + 64px);
+  }
+}
+
+@media (max-width: 410px) {
+  .masthead {
+    padding-top: calc(6rem + 88px);
+  }
+}
