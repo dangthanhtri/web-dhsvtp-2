@@ -150,7 +150,15 @@
                 <option value="doi1" selected>Đội 1</option>
                 <option value="doi2">Đội 2</option>
               </select>
-              <label  for="typeofgroup" class="active">Loại thí sinh</label>
+              <label  for="typeofgroup" class="active">Tên đội</label>
+            </div>
+            <!-- bang -->
+            <div class="md-form form-sm">
+              <select name="typeofbang" id="typeofbang" class="form-control" required>
+                <option value="A" selected>22 Quận, Huyện Đoàn, Thành Đoàn TP. Thủ Đức, các trường Trung cấp</option>
+                <option value="B">Các trường Đại học, Học viện, Cao đẳng</option>
+              </select>
+              <label  for="typeofbang" class="active">Bảng</label>
             </div>
             <!-- faculty -->
             <div class="md-form form-sm">
@@ -161,9 +169,9 @@
             
             <!-- certification -->
             <div class="md-form form-sm">
-              <i>Upload thẻ học sinh, sinh viên:</i>
+              <i>Upload bằng cấp: (Chọn tối đa 3 hình)</i>
               <img src="./img/default-user-image.png" style="width: 50px;" />
-                <input name="cers-upload" id="cers-upload" type="file" multiple="multiple">
+              <input name="cers-upload" id="cers-upload" type="file" multiple="multiple">
             </div>
 
             <!-- avatar -->
@@ -225,6 +233,14 @@
                 <option value="doi2">Đội 2</option>
               </select>
               <label  for="edit-typeofgroup" class="active">Tên đội</label>
+            </div>
+            <!--edit bang -->
+            <div class="md-form form-sm">
+              <select name="typeofbang" id="edit-typeofbang" class="form-control" required>
+                <option value="A" selected>22 Quận, Huyện Đoàn, Thành Đoàn TP. Thủ Đức, các trường Trung cấp</option>
+                <option value="B">Các trường Đại học, Học viện, Cao đẳng</option>
+              </select>
+              <label  for="edit-typeofgroup" class="active">Bảng</label>
             </div>
             <!--edit faculty -->
             <div class="md-form form-sm">
@@ -460,8 +476,8 @@
         <!-- Footer Location -->
         <div class="col-lg-4 mb-5 mb-lg-0">
           <h4 class="text-uppercase mb-4">LIÊN HỆ</h4>
-          <p class="lead mb-0">0773077345
-            <br>dangthanhtrispkt@gmail.com</p>
+          <p class="lead mb-0">Đ/c Trần Kim Phẳng - Cán bộ Ban TNTH Thành Đoàn
+            <br>Số điện thoại: 0352671165</p>
         </div>
 
         <!-- Footer Social Icons -->
@@ -471,7 +487,7 @@
 
         <!-- Footer About Text -->
         <div class="col-lg-4">
-          <h4 class="text-uppercase mb-4">HARRISTUDIO</h4>
+          <h4 class="text-uppercase mb-4">Thành Đoàn TP. Hồ Chí Minh</h4>
         </div>
 
       </div>
@@ -540,7 +556,7 @@ var db = firebase.database();
 </script>
 
 
-  <script src="./index.js?v1.1"></script>
+  <script src="./index.js?v1.2.3"></script>
 
   </body>
 </html>

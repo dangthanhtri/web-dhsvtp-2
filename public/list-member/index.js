@@ -171,20 +171,23 @@ function formValidation(formName){
     return true;
 }
 function clearInputField(){
-    let name = document.getElementById("name");
-    let DOB = document.getElementById("DOB");
-    let avatar = document.getElementById("avatar");
-    let typeOfMem = document.getElementById("typeofmem");
-    let typeOfGroup = document.getElementById("typeofgroup");
-    let faculty = document.getElementById("faculty");
-    let certificates = document.getElementById("edit-cers");
-    avatar.src = "./img/default-user-image.png";
-    name.value = "";
-    DOB.value = "";
-    typeOfMem.value = "";
-    typeOfGroup.value = "";
-    faculty.value = "";
-    certificates.innerHTML = "";
+    document.getElementById("name").value = "";
+    document.getElementById("DOB").value = "";
+    document.getElementById("typeofmem").value = "";
+    document.getElementById("typeofgroup").value = "";
+    document.getElementById("typeofbang").value = "";
+    document.getElementById("faculty").value = "";
+    document.getElementById("cers-upload").value = "";
+
+    document.getElementById("edit-name").value = "";
+    document.getElementById("edit-DOB").value = "";
+    document.getElementById("avatar").src = "./img/default-user-image.png";
+    document.getElementById("edit-typeofmem").value = "";
+    document.getElementById("edit-typeofgroup").value = "";
+    document.getElementById("edit-typeofbang").value = "";
+    document.getElementById("edit-faculty").value = "";
+    document.getElementById("edit-cers").innerHTML = "";
+    document.getElementById("edit-id").value = "";
 }
 function GenerateRandomId(){
     let max = 999;
@@ -199,6 +202,7 @@ function uploadInforMem(res, user, dataInput){
         DOB: dataInput.DOB,
         school: schoolname,
         type_of_group: dataInput.typeOfGroup,
+        type_of_bang: dataInput.typeOfBang,
         faculty: dataInput.faculty,
         avatar: res.avatar,
         certificates: res.certificates,
@@ -220,6 +224,7 @@ function addMemberDbByClickingButton(user){
         let DOB = document.getElementById("DOB");
         let typeOfMem = document.getElementById("typeofmem");
         let typeOfGroup = document.getElementById("typeofgroup");
+        let typeOfBang = document.getElementById("typeofbang");
         let faculty = document.getElementById("faculty");
         let dataInput = {
             certificates: certificates,
@@ -229,6 +234,7 @@ function addMemberDbByClickingButton(user){
             DOB: DOB.value,
             typeOfMem: typeOfMem.value,
             typeOfGroup: typeOfGroup.value,
+            typeOfBang: typeOfBang.value,
             faculty: faculty.value
         }
         uploadImgToCloudinary(user, dataInput);
@@ -315,8 +321,10 @@ function showInfoToEditMember(user, docId){
     let typeOfMem = document.getElementById("edit-typeofmem");
     let avatar = document.getElementById("avatar");
     let typeOfGroup = document.getElementById("edit-typeofgroup");
+    let typeOfBang = document.getElementById("edit-typeofbang");
     let faculty = document.getElementById("edit-faculty");
     let certificates = document.getElementById("edit-cers");
+    certificates.innerHTML = "";
     db.ref("users/" + user.uid + "/members/" + docId).once('value').then((snapshot)=>{
         let doc = snapshot.val();
         name.value = doc.name;
@@ -324,6 +332,7 @@ function showInfoToEditMember(user, docId){
         id.value = doc.id;
         typeOfMem.value = doc.type_of_mem;
         typeOfGroup.value = doc.type_of_group;
+        typeOfBang.value = doc.type_of_bang;
         faculty.value = doc.faculty;
         let count = 1;
         for(let i in doc.certificates){
@@ -343,8 +352,10 @@ function editImformationMemberDbByClickingButton(user){
     let typeOfMem = document.getElementById("edit-typeofmem");
     let avatar = document.getElementById("avatar");
     let typeOfGroup = document.getElementById("edit-typeofgroup");
+    let typeOfBang = document.getElementById("edit-typeofbang");
     let faculty = document.getElementById("edit-faculty");
     let certificates = document.getElementsByClassName("cers");
+
     let checkValidation = formValidation("edit-mem-form");
     if(checkValidation){
         let cers=[];
@@ -359,6 +370,7 @@ function editImformationMemberDbByClickingButton(user){
                 type_of_mem: typeOfMem.value,
                 avatar: avatar.src,
                 type_of_group: typeOfGroup.value,
+                type_of_bang: typeOfBang.value,
                 faculty: faculty.value,
                 certificates: cers
             })
