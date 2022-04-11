@@ -1,6 +1,6 @@
 let addMemberButton = document.getElementById('add-member-button');
 let row = document.getElementById("row");
-let loginUrl = "https://anhsangthoidai.harrisstudio.org/login/index.html";
+let loginUrl = "https://anhsangthoidai.com/login/index.html";
 let logout = document.getElementById('log-out');
 let editMemberButton = document.getElementById('edit-member-button');
 let wait = document.getElementsByClassName("wait");
