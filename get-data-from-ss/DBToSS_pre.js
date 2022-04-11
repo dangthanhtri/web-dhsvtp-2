@@ -31,14 +31,18 @@ let values = [
     "STT",
     "ID",
     "Họ và Tên",
-    "Ngày sinh",
+    "Năm sinh",
     "Khoa",
     "Trường",
     "Loại nhóm",
     "Loại thành viên",
+    "Bảng",
     "Điểm danh",
     "Ảnh đại diện",
-    "Thẻ HSSV",
+    "Bằng cấp",
+    "email",
+    "fullname",
+    "uid",
   ]
 ];
 // Load client secrets from a local file.
@@ -63,21 +67,14 @@ fs.readFile('credentials.json', (err, content) => {
           addValue.push(data[j].school);
           addValue.push(data[j].type_of_group);
           addValue.push(data[j].type_of_mem);
+          addValue.push(data[j].type_of_bang);
           addValue.push(data[j]["checkin"]);
           addValue.push(data[j]["avatar"]);
           addValue.push(certificates);
+          addValue.push(datas[i].email);
+          addValue.push(datas[i].fullname);
+          addValue.push(i);
           values.push(addValue);
-          // "STT",
-          // "ID",
-          // "Name",
-          // "DOB",
-          // "faculty",
-          // "School",
-          // "type_of_group",
-          // "type_of_mem",
-          // "checkin",
-          // "avatar",
-          // "certificates",
         }
       }
       else{
@@ -96,7 +93,7 @@ fs.readFile('credentials.json', (err, content) => {
       };
       const sheets = google.sheets({version: 'v4', auth});
       sheets.spreadsheets.values.update({
-        spreadsheetId: '16zu5ldBn21G792PrrYy6Lx4yCsRyBD6mYsaByNl9sOg',
+        spreadsheetId: '17eNzPh9tkVgsfJGFDAMVwp0u7Cm2HVYpalWXiyXI-Yc',
         range: 'sheet1!A1',
         valueInputOption: "RAW",
         resource,
@@ -115,7 +112,7 @@ fs.readFile('credentials.json', (err, content) => {
  * @param {function} callback The callback to call with the authorized client.
  */
 function authorize(credentials, callback) {
-  const {client_secret, client_id, redirect_uris} = credentials.installed;
+  const {client_secret, client_id, redirect_uris} = credentials.web;
   const oAuth2Client = new google.auth.OAuth2(
       client_id, client_secret, redirect_uris[0]);
 

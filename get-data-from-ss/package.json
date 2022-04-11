@@ -2,7 +2,7 @@
   "name": "get-data-from-ss",
   "version": "1.0.0",
   "description": "",
-  "main": "DBToSS_post.js",
+  "main": "DBToSS_pre.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
