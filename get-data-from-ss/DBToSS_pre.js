@@ -26,24 +26,26 @@ const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
 // created automatically when the authorization flow completes for the first
 // time.
 const TOKEN_PATH = 'token.json';
+
+const headerTable = [
+  "STT",
+  "ID",
+  "Họ và Tên",
+  "Năm sinh",
+  "Khoa",
+  "Trường",
+  "Loại nhóm",
+  "Loại thành viên",
+  "Bảng",
+  "Điểm danh",
+  "Ảnh đại diện",
+  "Bằng cấp",
+  "email",
+  "fullname",
+  "uid",
+]
+
 let values = [
-  [
-    "STT",
-    "ID",
-    "Họ và Tên",
-    "Năm sinh",
-    "Khoa",
-    "Trường",
-    "Loại nhóm",
-    "Loại thành viên",
-    "Bảng",
-    "Điểm danh",
-    "Ảnh đại diện",
-    "Bằng cấp",
-    "email",
-    "fullname",
-    "uid",
-  ]
 ];
 // Load client secrets from a local file.
 fs.readFile('credentials.json', (err, content) => {
@@ -87,11 +89,23 @@ fs.readFile('credentials.json', (err, content) => {
         // values.push(addValue);
       }
     }
-    authorize(JSON.parse(content), function(auth){
-      const resource = {
-        values,
-      };
+    authorize(JSON.parse(content), async function(auth){
       const sheets = google.sheets({version: 'v4', auth});
+      const filteredData = await filterNewData(sheets, values);
+      const lastIndexOfCurrentData = Math.max(filteredData.currentData.length, 1)
+      if(filteredData.currentData.length <= 0) {
+        filteredData.currentData.unshift(headerTable)
+      }
+      const resource = {
+        values: [
+          ...filteredData.currentData,
+          ...filteredData.willAppendData.map((d, i) => {
+            const stt = lastIndexOfCurrentData + i
+            d[0] = stt
+            return d
+          })
+        ],
+      };
       sheets.spreadsheets.values.update({
         spreadsheetId: '17eNzPh9tkVgsfJGFDAMVwp0u7Cm2HVYpalWXiyXI-Yc',
         range: 'sheet_update!A1',
@@ -104,6 +118,31 @@ fs.readFile('credentials.json', (err, content) => {
     });
   })
 });
+
+function getDataFromSS(sheets) {
+  return sheets.spreadsheets.values.get({
+    spreadsheetId: '17eNzPh9tkVgsfJGFDAMVwp0u7Cm2HVYpalWXiyXI-Yc',
+    range: 'sheet_update',
+  })
+  .then((res) => {
+    return res.data.values || []
+  });
+}
+
+async function filterNewData(sheets, commingData) {
+  const newDataArr = []
+  const dataSS = await getDataFromSS(sheets)
+  for (let i = 0; i < commingData.length; i++) {
+    const finded = dataSS.find(d => d[1] === commingData[i][1]) // d[1]: ID
+    if(!finded) {
+      newDataArr.push(commingData[i])
+    }
+  }
+  return {
+    willAppendData: newDataArr,
+    currentData: dataSS,
+  }
+}
 
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
