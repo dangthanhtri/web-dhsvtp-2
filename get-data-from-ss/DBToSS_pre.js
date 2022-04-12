@@ -94,7 +94,7 @@ fs.readFile('credentials.json', (err, content) => {
       const sheets = google.sheets({version: 'v4', auth});
       sheets.spreadsheets.values.update({
         spreadsheetId: '17eNzPh9tkVgsfJGFDAMVwp0u7Cm2HVYpalWXiyXI-Yc',
-        range: 'sheet1!A1',
+        range: 'sheet_update!A1',
         valueInputOption: "RAW",
         resource,
       }, (err, res) => {
