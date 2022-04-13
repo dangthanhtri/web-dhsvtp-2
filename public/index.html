@@ -38,11 +38,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item mx-0 mx-lg-1">
+          <!-- <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="" data-toggle="modal" data-target="#modalContactForm">HƯỚNG DẪN</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
+          </li> -->
+          <!-- <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="./login/">ĐĂNG KÍ</a>
+          </li> -->
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="" data-toggle="modal" data-target="#modalContactForm">ĐĂNG KÍ</a>
           </li>
           <!-- <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="./diem-danh/">ĐIỂM DANH</a>
@@ -168,7 +171,7 @@
 
     </div>
   </section>
-  <div class="modal fade" id="modalContactForm" tabindex="-1"  aria-labelledby="myModalLabel"
+  <!-- <div class="modal fade" id="modalContactForm" tabindex="-1"  aria-labelledby="myModalLabel"
     aria-hidden="true">
     <div class="modal-dialog cascading-modal">
 
@@ -196,7 +199,7 @@
       </div>
 
     </div>
-  </div>
+  </div> -->
 
   <div class="modal fade" id="modalContactForm" tabindex="-1"  aria-labelledby="myModalLabel"
     aria-hidden="true">
@@ -211,9 +214,9 @@
           </button>
         </div>
         <!--Body-->
-        <div class="modal-body mb-0" style="padding: 2rem 1rem">
+        <div class="modal-body mb-0" style="padding: 1.5rem 0.75rem">
             <ul class="tutorial" style="margin-left: -15px">
-              <li>Đã hết thời gian đăng ký. Vui lòng liên hệ (Đ/c Trần Kim Phẳng - Cán bộ ban TNTH Thành Đoàn) <br /> 0352671165  <br/> bantruonghocthanhdoan@gmail.com</li>
+              <div>Vui lòng liên hệ Đ/c Trần Kim Phẳng - Cán bộ ban TNTH Thành Đoàn <br />SĐT: 0352671165</div>
             </ul>
         </div>
       </div>
@@ -298,7 +301,7 @@ var db = firebase.database();
 </script>
 
   <script>
-    checkCookie();
+    // checkCookie();
     let myIndex = 0;
     carousel();
     
