@@ -41,7 +41,7 @@ fs.readFile('credentials.json', (err, content) => {
  * @param {function} callback The callback to call with the authorized client.
  */
 function authorize(credentials, callback) {
-  const {client_secret, client_id, redirect_uris} = credentials.installed;
+  const {client_secret, client_id, redirect_uris} = credentials.web;
   const oAuth2Client = new google.auth.OAuth2(
       client_id, client_secret, redirect_uris[0]);
 
@@ -92,7 +92,7 @@ function getNewToken(oAuth2Client, callback) {
 function listMajors(auth) {
   const sheets = google.sheets({version: 'v4', auth});
   sheets.spreadsheets.values.get({
-    spreadsheetId: '16zu5ldBn21G792PrrYy6Lx4yCsRyBD6mYsaByNl9sOg',
+    spreadsheetId: '17eNzPh9tkVgsfJGFDAMVwp0u7Cm2HVYpalWXiyXI-Yc',
     range: 'sheet2',
   }, (err, res) => {
     if (err) return console.log('The API returned an error: ' + err);
@@ -110,71 +110,23 @@ function listMajors(auth) {
 }
 
 async function uploadDataToDatabase(row){
-    // await db.ref('/users/').once('value').then(async function(snapshot){
-    //   let allSchools = snapshot.val();
-    //   for(let idSchool in allSchools){
-    //     await db.ref('/users/' + idSchool + '/members/').remove();
-    //   }
-    // })
-    if(row[0] == "STT") return;
-    await db.ref('/users/').once('value').then(async function(snapshot){
-    //let allSchools = snapshot.val();
-    //   for(let idSchool in allSchools){
-    //     if(row[1] == ''){
-    //       row[1] = GenerateRandomId();
-    //     }
-    //     if(row[4] == allSchools[idSchool]["schoolname"]){
-    //         let updates = {};
-    //         updates['/users/' + idSchool + '/members/' + row[1] + "/id"] = row[1]; 
-    //         updates['/users/' + idSchool + '/members/' + row[1] + "/name"] = row[2]; 
-    //         updates['/users/' + idSchool + '/members/' + row[1] + "/faculty"] = row[3];
-    //         updates['/users/' + idSchool + '/members/' + row[1] + "/school"] = row[4]; 
-    //         updates['/users/' + idSchool + '/members/' + row[1] + "/board"] = row[5];
-    //         updates['/users/' + idSchool + '/members/' + row[1] + "/msts"] = row[6];
-    //         updates['/users/' + idSchool + '/members/' + row[1] + "/shift"] = row[7]; 
-    //         updates['/users/' + idSchool + '/members/' + row[1] + "/room"] = row[8];
-    //         updates['/users/' + idSchool + '/members/' + row[1] + "/type_of_group"] = row[9]; 
-    //         updates['/users/' + idSchool + '/members/' + row[1] + "/type_of_mem"] = row[10];
-    //         updates['/users/' + idSchool + '/members/' + row[1] + "/checkin"] = row[11];
-    //         updates['/users/' + idSchool + '/members/' + row[1] + "/avatar"] = row[12]; 
-    //         updates['/users/' + idSchool + '/members/' + row[1] + "/certificates"] = row[13]; 
-    //         await db.ref().update(updates);
-    //         break;
-    //     }
-    //   }
-    // })
-    // await db.ref('/users/').once('value').then(async function(snapshot){
-    //   let allSchools = snapshot.val();
-    //   for(let idSchool in allSchools){
-    //     if(!allSchools[idSchool]["members"]){
-    //       await db.ref('/users/' + idSchool).remove();
-    //     }
-    //   }
-    // })
-    let updates = {};
-    let schoolname = row[4].toLowerCase().split(" ").join('').replace(/[^a-zA-Z ]/g, "").replace(/[àáảãạâầấẩẫậăằắẳẵặ]/g, 'a')
-    .replace(/[èéẻẽẹêềếểễệ]/g, 'e')
-    .replace(/[đ]/g, 'd')
-    .replace(/[ìíỉĩị]/g, 'i')
-    .replace(/[òóỏõọôồốổỗộơờớởỡợ]/g, 'o')
-    .replace(/[ùúủũụưừứửữự]/g, 'u')
-    .replace(/[ỳýỷỹỵ]/g, 'y');
-    updates['/users/' + schoolname + '/id'] = schoolname;
-    updates['/users/' + schoolname + '/permission'] = "user"; 
-    updates['/users/' + schoolname + '/schoolname'] = row[4]; 
-    updates['/users/' + schoolname + '/members/' + row[6] + "/id"] = row[6]; 
-    updates['/users/' + schoolname + '/members/' + row[6] + "/name"] = row[2]; 
-    updates['/users/' + schoolname + '/members/' + row[6] + "/faculty"] = row[3];
-    updates['/users/' + schoolname + '/members/' + row[6] + "/school"] = row[4]; 
-    updates['/users/' + schoolname + '/members/' + row[6] + "/board"] = row[5];
-    updates['/users/' + schoolname + '/members/' + row[6] + "/msts"] = row[6];
-    updates['/users/' + schoolname + '/members/' + row[6] + "/shift"] = row[7]; 
-    updates['/users/' + schoolname + '/members/' + row[6] + "/room"] = row[8];
-    updates['/users/' + schoolname + '/members/' + row[6] + "/type_of_group"] = row[9]; 
-    updates['/users/' + schoolname + '/members/' + row[6] + "/type_of_mem"] = row[10];
-    updates['/users/' + schoolname + '/members/' + row[6] + "/checkin"] = row[11];
-    updates['/users/' + schoolname + '/members/' + row[6] + "/avatar"] = row[12]; 
-    updates['/users/' + schoolname + '/members/' + row[6] + "/certificates"] = row[13] || " "; 
-        await db.ref().update(updates);
-  })
+  if(row[0] == "STT" || !row[14]) return;
+  let updates = {};
+  updates['/users/' + row[14] + '/members/' + row[1] + "/stt"] = row[0]; // stt
+  updates['/users/' + row[14] + '/members/' + row[1] + "/id"] = row[1]; // id
+  updates['/users/' + row[14] + '/members/' + row[1] + "/name"] = row[2]; // ho va ten
+  updates['/users/' + row[14] + '/members/' + row[1] + "/DOB"] = row[3]; // nam sinh
+  updates['/users/' + row[14] + '/members/' + row[1] + "/faculty"] = row[4]; // khoa
+  updates['/users/' + row[14] + '/members/' + row[1] + "/school"] = row[5]; // truong
+  updates['/users/' + row[14] + '/members/' + row[1] + "/type_of_group"] = row[6]; // loai nhom
+  updates['/users/' + row[14] + '/members/' + row[1] + "/type_of_mem"] = row[7];  // loai thanh vien
+  updates['/users/' + row[14] + '/members/' + row[1] + "/type_of_bang"] = row[8]; // bang
+  updates['/users/' + row[14] + '/members/' + row[1] + "/checkin"] = row[9]; // diem danh
+  updates['/users/' + row[14] + '/members/' + row[1] + "/avatar"] = row[10]; // anh dai dien
+  updates['/users/' + row[14] + '/members/' + row[1] + "/certificates"] = row[11]; // bang cap
+  updates['/users/' + row[14] + "/email"] = row[12];  // email
+  updates['/users/' + row[14] + "/fullname"] = row[13]; // fullname
+  updates['/users/' + row[14] + "/id"] = row[14]; // uid
+  updates['/users/' + row[14] + "/permission"] = "user"; // permission
+  await db.ref().update(updates);
 }
