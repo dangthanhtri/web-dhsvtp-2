@@ -177,25 +177,64 @@
   <div class="modal fade" id="modalLookUp" tabindex="-1"  aria-labelledby="myModalLabel"
       aria-hidden="true">
       <div class="modal-dialog cascading-modal">
-        <!--Content-->
+        <!--Content
         <div class="modal-content" style="width: fit-content">
-          <!--Header-->
+
           <div class="modal-header light-blue darken-3 white-text">
-            <h4 class="title"><i class="fas fa-pencil-alt"></i>Thông tin thí sinh</h4>
+            <h4 class="title"></i>THẺ THÍ SINH</h4>
             <button id="close-modal" type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          <!-- body -->
+
           <div class="container fade-animation" style="text-align: start; position: relative;">
-            <p><span style="display: inline-block; min-width: 100px;">Họ và tên: </span><span id="name"></span></p>
-            <p><span style="display: inline-block; min-width: 100px;">Tên đơn vị: </span><span id="schoolname"></span></p>
-            <p><span style="display: inline-block; min-width: 100px;">MSTS: </span><span id="id"></span></p>
-            <p><span style="display: inline-block; min-width: 100px;">Phòng thi: </span><span id="room"></span></p>
-            <p><span style="display: inline-block; min-width: 100px;">Ca thi: </span><span id="shift"></span></p>
+            <img id="image" class="img-responsive img-rounded center-block d-block mx-auto" src="./default-user-image.png" style="height: 150px; margin-bottom:30px" />
+            <p><span style="display: inline-block;">Họ và tên: </span><span id="name"></span></p>
+            <p><span style="display: inline-block;">Tên đơn vị: </span><span id="schoolname"></span></p>
+            <p><span style="display: inline-block;">MSTS: </span><span id="id"></span></p>
+            <p><span style="display: inline-block;">Phòng thi: </span><span id="room"></span></p>
+            <p><span style="display: inline-block;">Ca thi: </span><span id="shift"></span></p>
             <div><img style="position: absolute; bottom: 0; right: 16px; width: 85px; height: auto;" src="" id="qrcode" alt=""></div>
           </div>
         </div>
+        -->
+        <div class="modal-content" style="width: fit-content">
+          <div class="modal-header light-blue darken-3 white-text">
+          </div>
+          <!--Body-->
+          <div class="fade-animation">
+            <div class="profile-card">
+              <div id="avatar" class="box-image"></div>
+              <div class="qr-section">
+                <div class="pic">
+                  <img id="qrcode" src="./img/qrimg.png" style="position: absolute; bottom: 0; right: 16px; width: 65px; height: auto;" alt="" />
+                </div>
+              </div>
+              <div class="bottom-section">
+                <div>
+                  <div id="name" class="name">&nbsp;</div>
+                </div>
+                <div>
+                  <div id="schoolname" class="schoolname">&nbsp;</div>
+                </div>
+                <div>
+                  <div id="id" class="masothisinh">&nbsp;</div>
+                </div>
+                <div>
+                  <div id="room" class="phongthi">&nbsp;</div>
+                </div>
+                <div>
+                  <div id="shift" class="cathi">&nbsp;</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
       </div>
   </div>
   <!-- Footer -->
